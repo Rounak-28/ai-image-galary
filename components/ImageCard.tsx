@@ -2,12 +2,14 @@ import { shortenString } from "@/utils/utils";
 import Image from "next/image";
 import React from "react";
 
-const ImageCard = ({ id }: any) => {
-  let text =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cupiditate assumenda praesentium temporibus asperiores perspiciatis exercitationem inventore quod incidunt quam odit non ullam, perferendis dicta dolores ea officia deleniti nostrum.";
+interface ComponentProps {
+  id: number;
+  text: string;
+}
 
+const ImageCard = ({ id, text }: ComponentProps) => {
   return (
-    <div className="bg-gray-500 m-2  relative group">
+    <div className="bg-gray-500 m-2 relative group">
       <Image
         src={`/images/${id}.png`}
         alt=""
