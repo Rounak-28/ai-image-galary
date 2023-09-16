@@ -10,7 +10,9 @@ const Page = () => {
           className="w-8/12 h-28 px-3 focus:outline outline-1 outline-purple-600 bg-[#35353b] rounded-md"
           placeholder="give some prompt..."
         />
-      <button className="w-28 h-12 rounded-lg bg-[#352f9b] hover:bg-[#4640bb]">Generate</button>
+        <button className="w-28 h-12 rounded-lg bg-[#352f9b] hover:bg-[#4640bb]">
+          Generate
+        </button>
       </div>
     </div>
   );
