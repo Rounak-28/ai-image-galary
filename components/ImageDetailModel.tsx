@@ -35,8 +35,8 @@ const ImageDetailModel = ({ setIsModelOpen, text, id }: any) => {
         >
           X
         </button>
-        <div className="left h-max flex justify-center">
-          <div className="prompt bg-[#323238] w-[45%] sm:w-[60%] min-h-[110px] p-2 rounded-md flex flex-col">
+        <div className="left h-max flex justify-center w-fit">
+          <div className="prompt bg-[#323238] w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
             <span>{text}</span>
             <div className="h-14 flex items-center justify-center space-x-4">
               <button
@@ -48,16 +48,14 @@ const ImageDetailModel = ({ setIsModelOpen, text, id }: any) => {
             </div>
           </div>
         </div>
-        <div className="right h-full w-full">
-          <img src={`/images/${id}.png`} alt="" className="h-full" />
-          {/* <Image
+        <div className="right w-full flex justify-center">
+          <Image
             src={`/images/${id}.png`}
             alt=""
             width={300}
             height={100}
-            // layout="responsive"
-            // className="group-hover:brightness-50 group-hover:opacity-80"
-          /> */}
+            className="object-contain w-full"
+          />
         </div>
       </div>
     </div>
