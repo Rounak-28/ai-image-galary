@@ -31,7 +31,9 @@ const ImageCard = ({ id, text }: ComponentProps) => {
           {shortenString(text, 30, 15)}
         </div>
       </div>
-      {isModelOpen && <ImageDetailModel setIsModelOpen={setIsModelOpen} text={text} id={id} />}
+      {isModelOpen && (
+        <ImageDetailModel setIsModelOpen={setIsModelOpen} text={text} id={id} />
+      )}
     </>
   );
 };
