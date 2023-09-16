@@ -22,7 +22,7 @@ const ImageCard = ({ id, text }: ComponentProps) => {
         <Image
           src={`/images/${id}.png`}
           alt=""
-          width={300}
+          width={200}
           height={100}
           layout="responsive"
           className="group-hover:brightness-50 group-hover:opacity-80"
@@ -31,7 +31,7 @@ const ImageCard = ({ id, text }: ComponentProps) => {
           {shortenString(text, 30, 15)}
         </div>
       </div>
-      {isModelOpen && <ImageDetailModel setIsModelOpen={setIsModelOpen} />}
+      {isModelOpen && <ImageDetailModel setIsModelOpen={setIsModelOpen} text={text} id={id} />}
     </>
   );
 };
