@@ -8,8 +8,6 @@ const LoginBtn = () => {
 
   const [showProfileModal, setShowProfileModal] = useState(false);
 
-  //   console.log(session);
-
   if (session) {
     return (
       <div className="absolute right-5">
@@ -20,9 +18,23 @@ const LoginBtn = () => {
           onClick={() => setShowProfileModal(!showProfileModal)}
         />
         {showProfileModal && (
-          <div className="modal w-56 h-28 bg-red-700 absolute -bottom-32 right-0"></div>
+          <div className="modal w-64 h-28 bg-[#27272a] border-[1px] border-gray-300 rounded-md absolute -bottom-32 right-0 overflow-hidden">
+            <div className="h-1/2 flex items-center justify-center space-x-4 bg-[#414146]">
+              <img
+                src={session.user?.image!}
+                alt=""
+                className="w-8 h-8 rounded-full"
+              />
+              <span>{session?.user?.name}</span>
+            </div>
+            <button
+              className="w-full h-1/2 hover:bg-[#56565b] flex justify-center items-center"
+              onClick={() => signOut()}
+            >
+              sign out
+            </button>
+          </div>
         )}
-        {/* <span>{session?.user?.name}</span> */}
       </div>
     );
   }
