@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import LoginBtn from "./LoginBtn";
 
 const TopNavbar = () => {
   return (
@@ -10,6 +11,7 @@ const TopNavbar = () => {
       <Link href="/generate">
         <div className="px-2 py-2 flex justify-center">Generate</div>
       </Link>
+      <LoginBtn />
     </div>
   );
 };
