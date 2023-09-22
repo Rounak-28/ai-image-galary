@@ -6,6 +6,7 @@ import React, { useState } from "react";
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 const Page = () => {
+  const [inputText, setInputText] = useState("");
   const [prediction, setPrediction]: any = useState(null);
 
   const handleGenerate = async () => {
@@ -15,7 +16,7 @@ const Page = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        prompt: "an astronaut on the moon", // not working
+        prompt: inputText,
       }),
     });
 
@@ -84,6 +85,8 @@ const Page = () => {
         <span className="text-gray-400">Describe your image</span>
         <input
           type="text"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
           className="w-8/12 h-28 px-3 focus:outline outline-1 outline-purple-600 bg-[#35353b] rounded-md"
           placeholder="give some prompt..."
         />
@@ -94,11 +97,7 @@ const Page = () => {
           Generate
         </button>
         {prediction?.output && (
-          <img
-            src={prediction?.output[0]}
-            alt=""
-            className="w-96 h-96"
-          />
+          <img src={prediction?.output[0]} alt="" className="w-96 h-96" />
         )}
       </div>
     </div>
