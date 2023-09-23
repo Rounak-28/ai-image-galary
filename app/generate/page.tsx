@@ -93,7 +93,23 @@ const Page = () => {
         </button>
         {isloading && <ReactLoading type="bars" width={150} height={100} />}
         {prediction?.output && (
-          <img src={prediction?.output[0]} alt="" className="w-96 h-96" />
+          <div className="space-y-4">
+            <img src={prediction?.output[0]} alt="" className="w-80 h-80" />
+            <div className="side flex justify-center items-center space-x-7">
+              <button
+                className="bg-[#352f9b] hover:bg-[#4640bb] w-28 h-12 rounded-md"
+                // onClick={}
+              >
+                Share Image
+              </button>
+              <button
+                className="bg-[#352f9b] hover:bg-[#4640bb] w-28 h-12 rounded-md"
+                onClick={() => setPrediction(null)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
         )}
       </div>
     </div>
