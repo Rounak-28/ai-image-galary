@@ -1,11 +1,21 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const ImageDetailModel = ({ setIsModelOpen, text, id }: any) => {
+interface ComponentProps {
+  setIsModelOpen: any;
+  caption: string;
+  image: string;
+}
+
+const ImageDetailModel = ({
+  setIsModelOpen,
+  caption,
+  image,
+}: ComponentProps) => {
   const [copyBtnText, setCopyBtnText] = useState("copy prompt");
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(caption);
     setCopyBtnText("copied!");
     setTimeout(() => {
       setCopyBtnText("copy prompt");
@@ -37,7 +47,7 @@ const ImageDetailModel = ({ setIsModelOpen, text, id }: any) => {
         </button>
         <div className="left h-max flex justify-center w-fit">
           <div className="prompt bg-[#323238] w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
-            <span>{text}</span>
+            <span>{caption}</span>
             <div className="h-14 flex items-center justify-center space-x-4">
               <button
                 className="w-28 h-10 rounded-md bg-[#3f3f46] hover:bg-[#7c7c85]"
@@ -50,7 +60,7 @@ const ImageDetailModel = ({ setIsModelOpen, text, id }: any) => {
         </div>
         <div className="right w-full flex justify-center">
           <Image
-            src={`/images/${id}.png`}
+            src={image}
             alt=""
             width={300}
             height={100}

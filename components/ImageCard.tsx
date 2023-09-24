@@ -6,11 +6,13 @@ import React, { useState } from "react";
 import ImageDetailModel from "./ImageDetailModel";
 
 interface ComponentProps {
-  id: number;
-  text: string;
+  caption: string;
+  image: string;
+  username: string;
+  userDP: string;
 }
 
-const ImageCard = ({ id, text }: ComponentProps) => {
+const ImageCard = ({ caption, image, username, userDP }: ComponentProps) => {
   const [isModelOpen, setIsModelOpen] = useState(false);
 
   return (
@@ -20,7 +22,7 @@ const ImageCard = ({ id, text }: ComponentProps) => {
         onClick={() => setIsModelOpen(true)}
       >
         <Image
-          src={`/images/${id}.png`}
+          src={image}
           alt=""
           width={200}
           height={100}
@@ -28,11 +30,15 @@ const ImageCard = ({ id, text }: ComponentProps) => {
           className="group-hover:brightness-50 group-hover:opacity-80"
         />
         <div className="absolute bottom-0 hidden group-hover:block text-white">
-          {shortenString(text, 30, 15)}
+          {shortenString(caption, 30, 15)}
         </div>
       </div>
       {isModelOpen && (
-        <ImageDetailModel setIsModelOpen={setIsModelOpen} text={text} id={id} />
+        <ImageDetailModel
+          setIsModelOpen={setIsModelOpen}
+          caption={caption}
+          image={image}
+        />
       )}
     </>
   );
