@@ -1,14 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
 import ReactLoading from "react-loading";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 const Page = () => {
   const router = useRouter();
+  const { data: session } = useSession();
 
   const [inputText, setInputText] = useState("");
   const [prediction, setPrediction]: any = useState(null);
@@ -87,8 +88,8 @@ const Page = () => {
       body: JSON.stringify({
         caption: inputText,
         image: prediction.output[0],
-        username: "testsghdje",
-        userDP: "test47857435",
+        username: session?.user?.name,
+        userDP: session?.user?.image,
       }),
     });
     // const responsejson = await response.json();
