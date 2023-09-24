@@ -95,6 +95,7 @@ const Page = () => {
     // console.log(responsejson);
     setIsPosting(false);
     router.push("/");
+    router.refresh();
   };
 
   return (

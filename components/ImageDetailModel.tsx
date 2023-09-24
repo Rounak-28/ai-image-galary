@@ -45,7 +45,7 @@ const ImageDetailModel = ({
         >
           X
         </button>
-        <div className="left h-max flex justify-center w-fit">
+        <div className="left h-max flex justify-center w-full">
           <div className="prompt bg-[#323238] w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
             <span>{caption}</span>
             <div className="h-14 flex items-center justify-center space-x-4">
