@@ -3,16 +3,20 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import ReactLoading from "react-loading";
+import { useRouter } from "next/navigation";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 const Page = () => {
+  const router = useRouter();
+
   const [inputText, setInputText] = useState("");
   const [prediction, setPrediction]: any = useState(null);
-  const [isloading, setIsloading] = useState(false);
+  const [isgenerating, setIsGenerating] = useState(false);
+  const [isPosting, setIsPosting] = useState(false);
 
   const handleGenerate = async () => {
-    setIsloading(true);
+    setIsGenerating(true);
     let response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -33,17 +37,17 @@ const Page = () => {
       const response = await fetch("/api/generate/" + prediction.id);
       prediction = await response.json();
       if (response.status !== 200) {
-        setIsloading(false);
+        setIsGenerating(false);
         console.error("error bruhhh...");
         return;
       }
       setPrediction(prediction);
     }
-    setIsloading(false);
+    setIsGenerating(false);
   };
 
   const handleGenerateTest = async () => {
-    setIsloading(true);
+    setIsGenerating(true);
     await sleep(2000);
     setPrediction({
       id: "73hnl4bby5rwn5rldf7xpxmsqu",
@@ -70,7 +74,27 @@ const Page = () => {
         get: "https://api.replicate.com/v1/predictions/73hnl4bby5rwn5rldf7xpxmsqu",
       },
     });
-    setIsloading(false);
+    setIsGenerating(false);
+  };
+
+  const handlePost = async () => {
+    setIsPosting(true);
+    const response = await fetch("/api/sharepost", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        caption: inputText,
+        image: prediction.output[0],
+        username: "testsghdje",
+        userDP: "test47857435",
+      }),
+    });
+    // const responsejson = await response.json();
+    // console.log(responsejson);
+    setIsPosting(false);
+    router.push("/");
   };
 
   return (
@@ -91,16 +115,16 @@ const Page = () => {
         >
           Generate
         </button>
-        {isloading && <ReactLoading type="bars" width={150} height={100} />}
+        {isgenerating && <ReactLoading type="bars" width={150} height={100} />}
         {prediction?.output && (
           <div className="space-y-4">
             <img src={prediction?.output[0]} alt="" className="w-80 h-80" />
             <div className="side flex justify-center items-center space-x-7">
               <button
                 className="bg-[#352f9b] hover:bg-[#4640bb] w-28 h-12 rounded-md"
-                // onClick={}
+                onClick={handlePost}
               >
-                Share Image
+                {isPosting ? "Posting..." : "Share Image"}
               </button>
               <button
                 className="bg-[#352f9b] hover:bg-[#4640bb] w-28 h-12 rounded-md"
