@@ -15,6 +15,7 @@ export default async function Home() {
         {data.map((post: any) => (
           <ImageCard
             key={post.id}
+            id={post.id}
             caption={post.caption}
             image={post.image}
             username={post.username}

@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 interface ComponentProps {
   setIsModelOpen: any;
+  id: number;
   caption: string;
   image: string;
   username: string;
@@ -12,12 +13,25 @@ interface ComponentProps {
 
 const ImageDetailModel = ({
   setIsModelOpen,
+  id,
   caption,
   image,
   username,
   userDP,
 }: ComponentProps) => {
   const [copyBtnText, setCopyBtnText] = useState("copy prompt");
+
+  const handleLike = async (id: number) => {
+    const response = await fetch("/api/like", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id,
+      }),
+    });
+  };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(caption);

@@ -7,6 +7,7 @@ import ImageDetailModel from "./ImageDetailModel";
 import { AiOutlineHeart } from "react-icons/ai";
 
 interface ComponentProps {
+  id: number;
   caption: string;
   image: string;
   username: string;
@@ -14,7 +15,14 @@ interface ComponentProps {
   likeCount: number;
 }
 
-const ImageCard = ({ caption, image, username, userDP, likeCount }: ComponentProps) => {
+const ImageCard = ({
+  id,
+  caption,
+  image,
+  username,
+  userDP,
+  likeCount,
+}: ComponentProps) => {
   const [isModelOpen, setIsModelOpen] = useState(false);
 
   return (
@@ -44,6 +52,7 @@ const ImageCard = ({ caption, image, username, userDP, likeCount }: ComponentPro
       {isModelOpen && (
         <ImageDetailModel
           setIsModelOpen={setIsModelOpen}
+          id={id}
           caption={caption}
           image={image}
           username={username}
