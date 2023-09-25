@@ -41,7 +41,7 @@ const LoginBtn = () => {
   return (
     <>
       <button
-        className="absolute right-5 bg-[#342d95] rounded-md w-28 h-10 flex justify-center items-center"
+        className="absolute right-5 bg-[#6855f5] hover:bg-[#7c6bff] rounded-md w-28 h-10 flex justify-center items-center"
         onClick={() => signIn()}
       >
         Log In
