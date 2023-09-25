@@ -13,7 +13,9 @@ const TopNavbar = () => {
       <Link href="/">
         <div className="px-2 py-2 flex justify-center">Home</div>
       </Link>
-      <Link href={session ? "/generate" : "/api/auth/signin"}>
+      <Link
+        href={session ? "/generate" : "/api/auth/signin?callbackUrl=/generate"}
+      >
         <div className="px-2 py-2 flex justify-center">Generate</div>
       </Link>
       <LoginBtn />
