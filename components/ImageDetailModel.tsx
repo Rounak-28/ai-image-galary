@@ -42,7 +42,7 @@ const ImageDetailModel = ({
 
   return (
     <div className="w-screen h-screen fixed top-0 left-0 flex justify-center items-center z-[999]">
-      <div className="w-3/4 h-3/4 px-2 py-4 bg-[#27272a] rounded-md border-[1px] border-gray-300 relative flex">
+      <div className="w-3/4 h-3/4 px-2 py-4 bg-[#110f1a] rounded-md border-[1px] border-gray-300 relative flex">
         <button
           className="text-xl md:text-2xl lg:text-3xl font-semibold absolute top-4 right-4"
           onClick={() => setIsModelOpen(false)}
@@ -59,7 +59,7 @@ const ImageDetailModel = ({
           />
         </div>
         <div className="right h-max flex justify-center w-full">
-          <div className="prompt bg-[#323238] w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
+          <div className="prompt bg-[#1e1a2d] w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
             <div className="flex items-center space-x-2 mt-1 mb-4">
               <img src={userDP} className="h-10 w-10 rounded-full" alt="" />
               <span className="text-gray-300">{username}</span>

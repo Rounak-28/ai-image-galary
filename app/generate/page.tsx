@@ -100,18 +100,18 @@ const Page = () => {
   };
 
   return (
-    <div className="bg-[#27272a] text-white w-screen h-screen flex justify-center">
+    <div className="bg-[#0e0821] text-white w-screen h-screen flex justify-center">
       <div className="w-[80%] mt-8 space-y-3 flex flex-col items-center">
         <span className="text-gray-400">Describe your image</span>
         <input
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          className="w-8/12 h-28 px-3 focus:outline outline-1 outline-purple-600 bg-[#35353b] rounded-md"
+          className="w-8/12 h-28 px-3 focus:outline outline-1 outline-purple-600 bg-[#1e1a2d] rounded-md"
           placeholder="give some prompt..."
         />
         <button
-          className="w-28 h-12 rounded-lg bg-[#352f9b] hover:bg-[#4640bb]"
+          className="w-28 h-12 rounded-lg bg-[#7c6bff] hover:bg-[#9689f5]"
           // onClick={handleGenerate}
           onClick={handleGenerateTest} // just for testing purposes without using real api
         >
@@ -123,13 +123,13 @@ const Page = () => {
             <img src={prediction?.output[0]} alt="" className="w-80 h-80" />
             <div className="side flex justify-center items-center space-x-7">
               <button
-                className="bg-[#352f9b] hover:bg-[#4640bb] w-28 h-12 rounded-md"
+                className="bg-[#7c6bff] hover:bg-[#9689f5] w-28 h-12 rounded-md"
                 onClick={handlePost}
               >
                 {isPosting ? "Posting..." : "Share Image"}
               </button>
               <button
-                className="bg-[#352f9b] hover:bg-[#4640bb] w-28 h-12 rounded-md"
+                className="bg-[#7c6bff] hover:bg-[#9689f5] w-28 h-12 rounded-md"
                 onClick={() => setPrediction(null)}
               >
                 Cancel

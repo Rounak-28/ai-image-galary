@@ -10,7 +10,7 @@ export default async function Home() {
   const data = await getData();
 
   return (
-    <main className="w-screen min-h-screen bg-[#27272a] text-white">
+    <main className="w-screen min-h-screen bg-[#05020e] text-white">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {data.map((post: any) => (
           <ImageCard

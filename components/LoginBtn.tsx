@@ -18,8 +18,8 @@ const LoginBtn = () => {
           onClick={() => setShowProfileModal(!showProfileModal)}
         />
         {showProfileModal && (
-          <div className="modal w-64 h-28 bg-[#27272a] border-[1px] border-gray-300 rounded-md absolute -bottom-32 right-0 overflow-hidden">
-            <div className="h-1/2 flex items-center justify-center space-x-4 bg-[#414146]">
+          <div className="modal w-64 h-28 bg-[#0e0821] border-[1px] border-gray-300 rounded-md absolute -bottom-32 right-0 overflow-hidden">
+            <div className="h-1/2 flex items-center justify-center space-x-4 bg-[#1e1a2d]">
               <img
                 src={session.user?.image!}
                 alt=""
@@ -28,7 +28,7 @@ const LoginBtn = () => {
               <span>{session?.user?.name}</span>
             </div>
             <button
-              className="w-full h-1/2 hover:bg-[#56565b] flex justify-center items-center"
+              className="w-full h-1/2 hover:bg-[#3b3552] flex justify-center items-center"
               onClick={() => signOut()}
             >
               sign out
