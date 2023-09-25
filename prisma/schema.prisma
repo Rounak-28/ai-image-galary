@@ -11,12 +11,12 @@ datasource db {
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  caption   String // caption i.e the prompt
-  image     String // generated image url
-  username  String // username of the user who posted
-  userDP    String // user's profile picture
-  // TODO: add like count
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  caption    String   // caption i.e the prompt
+  image      String   // generated image url
+  username   String   // username of the user who posted
+  userDP     String   // user's profile picture
+  likeCount  Int      @default(0)
 }

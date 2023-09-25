@@ -11,9 +11,10 @@ interface ComponentProps {
   image: string;
   username: string;
   userDP: string;
+  likeCount: number;
 }
 
-const ImageCard = ({ caption, image, username, userDP }: ComponentProps) => {
+const ImageCard = ({ caption, image, username, userDP, likeCount }: ComponentProps) => {
   const [isModelOpen, setIsModelOpen] = useState(false);
 
   return (
@@ -36,7 +37,7 @@ const ImageCard = ({ caption, image, username, userDP }: ComponentProps) => {
         <div className="absolute top-1 right-2 hidden group-hover:block">
           <div className="flex items-center space-x-1">
             <AiOutlineHeart className="text-4xl" />
-            <span>42</span>
+            <span>{likeCount}</span>
           </div>
         </div>
       </div>

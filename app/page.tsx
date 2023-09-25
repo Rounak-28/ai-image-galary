@@ -19,6 +19,7 @@ export default async function Home() {
             image={post.image}
             username={post.username}
             userDP={post.userDP}
+            likeCount={post.likeCount}
           />
         ))}
       </div>
