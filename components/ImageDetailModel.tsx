@@ -40,12 +40,21 @@ const ImageDetailModel = ({
     <div className="w-screen h-screen fixed top-0 left-0 flex justify-center items-center z-[999]">
       <div className="w-3/4 h-3/4 px-2 py-4 bg-[#27272a] rounded-md border-[1px] border-gray-300 relative flex">
         <button
-          className="text-xl md:text-2xl lg:text-3xl font-semibold absolute top-4 left-4"
+          className="text-xl md:text-2xl lg:text-3xl font-semibold absolute top-4 right-4"
           onClick={() => setIsModelOpen(false)}
         >
           X
         </button>
-        <div className="left h-max flex justify-center w-full">
+        <div className="left w-full flex justify-center">
+          <Image
+            src={image}
+            alt=""
+            width={300}
+            height={100}
+            className="object-contain w-full"
+          />
+        </div>
+        <div className="right h-max flex justify-center w-full">
           <div className="prompt bg-[#323238] w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
             <span>{caption}</span>
             <div className="h-14 flex items-center justify-center space-x-4">
@@ -57,15 +66,6 @@ const ImageDetailModel = ({
               </button>
             </div>
           </div>
-        </div>
-        <div className="right w-full flex justify-center">
-          <Image
-            src={image}
-            alt=""
-            width={300}
-            height={100}
-            className="object-contain w-full"
-          />
         </div>
       </div>
     </div>
