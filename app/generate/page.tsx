@@ -112,8 +112,8 @@ const Page = () => {
         />
         <button
           className="w-28 h-12 rounded-lg bg-[#7c6bff] hover:bg-[#9689f5]"
-          // onClick={handleGenerate}
-          onClick={handleGenerateTest} // just for testing purposes without using real api
+          onClick={handleGenerate}
+          // onClick={handleGenerateTest} // just for testing purposes without using real api
         >
           Generate
         </button>
