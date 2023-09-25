@@ -5,12 +5,16 @@ interface ComponentProps {
   setIsModelOpen: any;
   caption: string;
   image: string;
+  username: string;
+  userDP: string;
 }
 
 const ImageDetailModel = ({
   setIsModelOpen,
   caption,
   image,
+  username,
+  userDP,
 }: ComponentProps) => {
   const [copyBtnText, setCopyBtnText] = useState("copy prompt");
 
@@ -56,6 +60,11 @@ const ImageDetailModel = ({
         </div>
         <div className="right h-max flex justify-center w-full">
           <div className="prompt bg-[#323238] w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
+            <div className="flex items-center space-x-2 mt-1 mb-4">
+              <img src={userDP} className="h-10 w-10 rounded-full" alt="" />
+              <span className="text-gray-300">{username}</span>
+            </div>
+            <p className="text-gray-400 font-semibold my-1">Prompt</p>
             <span>{caption}</span>
             <div className="h-14 flex items-center justify-center space-x-4">
               <button

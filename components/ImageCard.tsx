@@ -29,7 +29,7 @@ const ImageCard = ({ caption, image, username, userDP }: ComponentProps) => {
           layout="responsive"
           className="group-hover:brightness-50 group-hover:opacity-80"
         />
-        <div className="absolute bottom-0 hidden group-hover:block text-white">
+        <div className="absolute bottom-1 left-2 hidden group-hover:block text-white">
           {shortenString(caption, 30, 15)}
         </div>
       </div>
@@ -38,6 +38,8 @@ const ImageCard = ({ caption, image, username, userDP }: ComponentProps) => {
           setIsModelOpen={setIsModelOpen}
           caption={caption}
           image={image}
+          username={username}
+          userDP={userDP}
         />
       )}
     </>
