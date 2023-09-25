@@ -57,31 +57,31 @@ const ImageDetailModel = ({
 
   return (
     <div className="w-screen h-screen fixed top-0 left-0 flex justify-center items-center z-[999]">
-      <div className="w-3/4 h-3/4 px-2 py-4 bg-[#110f1a] rounded-md border-[1px] border-gray-300 relative flex">
+      <div className="w-screen h-screen md:w-[75%] md:h-[75%] md:px-2 md:py-4 bg-[#110f1a] rounded-md border-[1px] border-gray-300 relative flex flex-col md:flex-row">
         <AiOutlineClose
-          className="text-xl md:text-2xl lg:text-3xl font-semibold absolute top-4 right-4"
+          className="text-3xl font-semibold absolute top-2 md:top-4 right-4"
           onClick={() => setIsModelOpen(false)}
         />
-        <div className="left w-full flex justify-center">
+        <div className="left w-full flex justify-center mt-10 md:mt-0">
           <Image
             src={image}
             alt=""
-            width={300}
-            height={100}
+            width={400}
+            height={200}
             className="object-contain w-full"
           />
         </div>
         <div className="right h-max flex justify-center w-full">
-          <div className="prompt bg-[#1e1a2d] w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
+          <div className="prompt bg-[#1e1a2d] w-full md:w-[85%] min-h-[110px] p-2 rounded-md flex flex-col">
             <div className="flex items-center space-x-2 mt-1 mb-4">
-              <img src={userDP} className="h-10 w-10 rounded-full" alt="" />
-              <span className="text-gray-300">{username}</span>
+              <img src={userDP} className="h-9 w-9 md:h-10 md:w-10 rounded-full" alt="" />
+              <span className="text-gray-300 text-sm md:text-base">{username}</span>
             </div>
-            <p className="text-gray-400 font-semibold my-1">Prompt</p>
-            <span>{caption}</span>
+            <p className="text-gray-400 font-semibold my-1 text-sm md:text-base">Prompt</p>
+            <span className="text-sm md:text-base">{caption}</span>
             <div className="h-14 flex items-center justify-center space-x-4">
               <button
-                className="w-28 h-10 rounded-md bg-[#2a2832] hover:bg-[#3f3d4a]"
+                className="w-28 h-10 rounded-md bg-[#2a2832] hover:bg-[#3f3d4a] text-sm md:text-base"
                 onClick={handleCopy}
               >
                 {copyBtnText}

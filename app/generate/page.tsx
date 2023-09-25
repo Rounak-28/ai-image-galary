@@ -107,7 +107,7 @@ const Page = () => {
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          className="w-8/12 h-28 px-3 focus:outline outline-1 outline-purple-600 bg-[#1e1a2d] rounded-md"
+          className="w-11/12 lg:w-10/12 xl:w-8/12 h-28 px-3 focus:outline outline-1 outline-purple-600 bg-[#1e1a2d] rounded-md"
           placeholder="give some prompt..."
         />
         <button
