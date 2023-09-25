@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 
 interface ComponentProps {
   setIsModelOpen: any;
@@ -43,12 +44,10 @@ const ImageDetailModel = ({
   return (
     <div className="w-screen h-screen fixed top-0 left-0 flex justify-center items-center z-[999]">
       <div className="w-3/4 h-3/4 px-2 py-4 bg-[#110f1a] rounded-md border-[1px] border-gray-300 relative flex">
-        <button
+        <AiOutlineClose
           className="text-xl md:text-2xl lg:text-3xl font-semibold absolute top-4 right-4"
           onClick={() => setIsModelOpen(false)}
-        >
-          X
-        </button>
+        />
         <div className="left w-full flex justify-center">
           <Image
             src={image}
@@ -68,7 +67,7 @@ const ImageDetailModel = ({
             <span>{caption}</span>
             <div className="h-14 flex items-center justify-center space-x-4">
               <button
-                className="w-28 h-10 rounded-md bg-[#3f3f46] hover:bg-[#7c7c85]"
+                className="w-28 h-10 rounded-md bg-[#2a2832] hover:bg-[#3f3d4a]"
                 onClick={handleCopy}
               >
                 {copyBtnText}

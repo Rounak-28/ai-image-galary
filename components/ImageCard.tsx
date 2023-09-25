@@ -4,6 +4,7 @@ import { shortenString } from "@/utils/utils";
 import Image from "next/image";
 import React, { useState } from "react";
 import ImageDetailModel from "./ImageDetailModel";
+import { AiOutlineHeart } from "react-icons/ai";
 
 interface ComponentProps {
   caption: string;
@@ -31,6 +32,12 @@ const ImageCard = ({ caption, image, username, userDP }: ComponentProps) => {
         />
         <div className="absolute bottom-1 left-2 hidden group-hover:block text-white">
           {shortenString(caption, 30, 15)}
+        </div>
+        <div className="absolute top-1 right-2 hidden group-hover:block">
+          <div className="flex items-center space-x-1">
+            <AiOutlineHeart className="text-4xl" />
+            <span>42</span>
+          </div>
         </div>
       </div>
       {isModelOpen && (
