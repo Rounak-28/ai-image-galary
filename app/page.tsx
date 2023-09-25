@@ -1,5 +1,7 @@
 import ImageCard from "@/components/ImageCard";
 
+export const dynamic = "force-dynamic";
+
 async function getData() {
   // some hacky way, but hey it works
   const response = await import("../app/api/posts/route");
