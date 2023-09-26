@@ -44,6 +44,7 @@ const Page = () => {
         return;
       }
       setPrediction(prediction);
+      console.log(prediction)
     }
     setIsGenerating(false);
   };
@@ -121,8 +122,7 @@ const Page = () => {
         {isgenerating && <ReactLoading type="bars" width={150} height={100} />}
         {prediction?.output && (
           <div className="space-y-4">
-            <Image src={prediction?.output[0]} width={400} height={200} alt="idk" />
-            {/* <img src={prediction?.output[0]} alt="" className="w-80 h-80" /> */}
+            <img src={prediction?.output[0]} alt="" className="w-80 h-80" />
             <div className="side flex justify-center items-center space-x-7">
               <button
                 className="bg-[#7c6bff] hover:bg-[#9689f5] w-28 h-12 rounded-md"
