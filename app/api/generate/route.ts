@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
   const prompt = reqPrompt.prompt;
 
   const prediction = await replicate.predictions.create({
-    version: "ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4",
+    version: "8beff3369e81422112d93b89ca01426147de542cd4684c244b673b105188fe5f",
     input: { prompt: prompt },
   });
 
