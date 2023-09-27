@@ -44,12 +44,10 @@ const Page = () => {
         return;
       }
       setPrediction(prediction);
-      // console.log(prediction)
+      console.log(prediction)
     }
     setIsGenerating(false);
   };
-
-  
 
   const handleGenerateTest = async () => {
     setIsGenerating(true);
